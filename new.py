@@ -81,3 +81,4 @@ details['students'].extend(['Ganny','sarath','kartheek','yashwanth'])
 print(details['students'])
 details['subjects'].add('excel')
 print(details['subjects'])#set is unique and unordered
+
