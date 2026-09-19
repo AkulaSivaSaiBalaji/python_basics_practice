@@ -75,11 +75,12 @@ for i in range(1):
     elif user_choice==3 and user_choice>0:
         weight=float(input("Enter the weight: "))
         height=float(input("enter your height: "))
+        inches =float(input("Enter your height (inches): "))
         weight=weight*2.20462
-        height=height*12
-        bmi=weight/((height**2)*703)
+        height_in=height*12+inches
+        bmi=weight/((height_in**2)*703)
         name=input("Enter your name: ")
-        details["height"].append(height)
+        details["height"].append(height_in)
         details["weight"].append(weight)
         details["name"].append(name)
         if bmi<18.5 and bmi>0:

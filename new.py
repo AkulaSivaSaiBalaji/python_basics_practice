@@ -56,7 +56,7 @@ print(batch)
 #batch[2].remove('hyd') #doesnot work because tuple is immutable we cannot change or delete any item 
 batch.clear()
 print(batch)
-'''
+
 
 details={}
 print(len(details))
@@ -81,4 +81,5 @@ details['students'].extend(['Ganny','sarath','kartheek','yashwanth'])
 print(details['students'])
 details['subjects'].add('excel')
 print(details['subjects'])#set is unique and unordered
+''' 
 
