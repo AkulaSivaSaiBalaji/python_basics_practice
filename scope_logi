@@ -1,0 +1,111 @@
+'''
+Scope of the variable --> scope is basically the region or area where the data is accessible 
+
+local scope, global scope, global keywords, enclosing scope(non local keywords)
+built-scoep
+def data():
+    name = ' codegnan'
+    return f'{name} is vizag' 
+print(data())
+print(name)#NameError: name 'name' is not defined
+output:Traceback (most recent call last):
+  File "/home/yashaswi/Desktop/Codegnan/PFS/Python Journey/day.35.py", line 14, in <module>
+    print(name)
+          ^^^^
+NameError: name 'name' is not defined
+
+#local scope (local variables) --> variable(S) defined inside the function arr 
+#accessable only
+
+Global Scope--> varibale defined outside the function can be accessable 
+inside the function also
+
+count = 10# global variable
+def details():
+    print(f'Value of count is {count} inside the function')
+    #count += 5 raises the below comment error 
+details()
+print(f'Value of count is {count} outside the function')
+
+count = 10 #global variable
+def details():
+    count = 15#local variable
+    print(f'Value of count is {count} inside the function')
+    #count += 5
+details()
+print(f'Value of count is {count} outside the function')
+output :
+Value of count is 15 inside the function
+Value of count is 10 outside the function
+
+count = 10 #global variable
+def details():
+    count = 15#local variable
+    print(f'Value of count is {count} inside the function')
+    count += 5
+    print(f'Value of count is {count} inside the function')
+details()
+print(f'Value of count is {count} outside the function')
+output :
+Value of count is 15 inside the function
+Value of count is 20 inside the function
+Value of count is 10 outside the function
+
+
+count = 10 #global variable
+def details():
+    global count 
+    count += 5
+    print(f'Value of count is {count} inside the function')
+details()
+print(f'Value of count is {count} outside the function')
+output:
+Value of count is 15 inside the function
+Value of count is 15 outside the function
+
+#Enclosing scope--> Nested Function
+def outer_func():
+    """Nested function""
+    count = 5
+    def inner_func():
+        nonlocal count
+        count += 5
+         """Inner function to use count variable"""
+        print(count)
+    inner_func()
+outer_func() #output : 10
+
+#Built-in scope--> usage of in-built functions as variables
+len = 10
+print(len*2)#here the type of the variable is <int> but in next print statement the type of len is <list>
+a = ['a',1,'3']
+print(len(a))#TypeError: 'int' object is not callable
+#LEBG(local,enclosing,built-in,global)
+
+#Built-in functions, anonymous functions, recursive function
+
+#print(dir())
+#print(__builtins__)#output:['__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__']
+#print(dir(__builtins__))#returns the list of all built-in (funcions,error)
+#Every built-in datatypes is built-in -->int, float,str,list,tuple,set,dict,bool
+#print(bool('codegnan'))#output: True
+#print(float(int(bool(25))))#output: 1.0
+#print(abs(-23))# returns the absolute 
+
+#all(), any()
+x = [23,45,'poll']
+x.append(None)
+print(x)#[23, 45, 'poll', None]
+print(all(x)) #False #all(iterable) it needs all values in the iterable to be exists
+print(any(x)) #True
+print(bin(5))#0b101, returns the binary value
+print(chr(65))
+print(ord())
+'''
+
+print(divmod(6,2))
+print(6%2)
+print(round(5.345))
+print(round(5.346,2))
+print(round(5.346,2))
+print(round(5.346,3))
